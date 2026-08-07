@@ -50,16 +50,12 @@ fi
 supervisorctl status|grep ttscache_server
 if [[ $? -eq 0 ]];then
    supervisorctl start ttscache_server
-   status_tts=`supervisorctl status|grep ttscache_server|awk -F '[ ]*' '{print $2}'|tr -d '\r\n'`
    sleep 5
+   status_tts=`supervisorctl status|grep ttscache_server|awk -F '[ ]*' '{print $2}'|tr -d '\r\n'`
    if [[ "${status_tts}" == "RUNNING" ]];then
       log_info "ttscache_server启动成功"
    else
       log_error "请人为检查ttscache_server服务状态"
    fi
 fi
-
-
-
-
 
