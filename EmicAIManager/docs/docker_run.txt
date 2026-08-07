@@ -1,0 +1,11 @@
+
+## freeswitch
+docker run -it -d --name freeswitch --network host  --privileged=false
+ -v /etc/freeswitch:/etc/freeswitch
+ -v /data/tts_cached:/data/tts_cache
+ -v /usr/share/freeswitch/sounds/en/us/callie/robot:/usr/share/freeswitch/sounds/en/us/callie/robot
+   freeswitch:r.14.68794
+
+docker run -it -d --restart=always --name outcallserver  -v /etc/pbx/outcall_server/:/home/emi/outcallserver/conf -v /var/pbx/logs/outcallserver:/tmp/OutcallServer -v /var/pbx/upload/robot/tts_cached:/var/pbx/upload/robot/tts_cached --env DB_CONN_STR="host=mysql.emic;port=13306;db=ai;user=emi_ai;password=Sinicnet@123456;compress=true;auto-reconnect=true" --env REDIS_IP=redis.emic --env REDIS_PORT=16379 --env REDIS_PW=greeisgood --env FREESWITCH_ADDRESS=freeswitch.emic --env FREESWITCH_INBOUND_PORT=8011 --env TTS_CACHE_SERVER_PORT=9985 --env TTS_CACHE_SERVER_IP=127.0.0.1 --env TTS_CACHE_SERVER_START=0 --env 'WEB_API_HOST="https://aicall.emic:1172/"' outcall_server:r3.22.69867
+#docker run aicall
+docker run -it -d --network host --restart=always --name aicall  -v /var/pbx/upload:/var/pbx/upload -v /var/pbx/logs/aicall:/var/pbx/tmp/logs -v /etc/pbx/aicall:/var/pbx/website/config --env MYSQL_HOST=mysql.emic  --env MYSQL_USER=emi_web --env MYSQL_PASSWORD=Sinicnet@123456 --env  HTTP_PORT=1171 --env  HTTPS_PORT=1172 aicall:r3.14.68744

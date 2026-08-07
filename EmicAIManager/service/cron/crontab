@@ -1,0 +1,4 @@
+#!/bin/bash
+# run script at 1:00 every day witch root
+0 1  * * * /etc/pbx/scripts/clear.sh
+#* */10 * * * ntpdate -u 80.7.35.61 && hwclock -w
