@@ -1,0 +1,4 @@
+outcallserver_version=87342
+ttscacheserver_version=87342
+outcallserver_build_version=22.02.16
+install_run_version=v2.2

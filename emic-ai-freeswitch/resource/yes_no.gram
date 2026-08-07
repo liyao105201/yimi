@@ -1,0 +1,12 @@
+#JSGF V1.0;
+
+/**
+  * JSGF Grammar for example
+  */
+
+grammar example;
+
+<yes> = [ yes|是 ];
+<no> = [ no|否 ];
+
+public <results> = [ <yes> | <no> ];

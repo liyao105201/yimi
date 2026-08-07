@@ -1,0 +1,25 @@
+<include>
+  <profile name="ali" version="2"> 
+    <param name="server-ip" value="asr.emic"/>
+    <param name="server-port" value="7010"/>
+    <param name="resource-location" value=""/>
+    <param name="client-ip" value="freeswitch.emic"/>
+    <param name="client-port" value="5069"/>
+    <param name="sip-transport" value="udp"/>
+    <param name="speechsynth" value="speechsynthesizer"/>
+    <param name="speechrecog" value="speechrecognizer"/>
+    <!--param name="rtp-ext-ip" value="auto"/-->
+    <param name="rtp-ip" value="freeswitch.emic"/>
+    <param name="rtp-ext-ip" value="freeswitch.emic"/>
+    <param name="rtp-port-min" value="4000"/>
+    <param name="rtp-port-max" value="5000"/>
+    <param name="codecs" value="PCMU PCMA L16/96/8000"/>
+
+    <synthparams>
+    </synthparams>
+
+    <recogparams>
+      <!--param name="start-input-timers" value="false"/-->
+    </recogparams>
+  </profile>
+</include>

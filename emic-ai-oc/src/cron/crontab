@@ -1,0 +1,2 @@
+# m h  dom mon dow   command
+0 21 * * *  /home/emi/cron/pack_oc_logs.sh

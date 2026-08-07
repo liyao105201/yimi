@@ -1,0 +1,48 @@
+<configuration name="emic.conf" description="emic common configure">
+  <settings>
+    <!-- TTS FOR DATA BAKER -->
+    <param name="dbtts-name1" value="jingjing" />
+    <param name="dbtts-voice1" value="39.104.162.93:8048"/>
+    <param name="dbtts-userid1" value="08cde480-09c1-11e9-b5b6-54e1ad0a9fc5"/>
+    <param name="dbtts-speed1" value="5"/>
+
+    <param name="dbtts-name2" value="yangyang" />
+    <param name="dbtts-voice2" value="39.104.162.93:8038"/>
+    <param name="dbtts-userid2" value="speech"/>
+    <param name="dbtts-speed2" value="5"/>
+    <param name="voice_speed_type" value="0"/>
+    <!--    本地部署-->
+    <param name="dbtts-v1-oauth-url" value="no"/>
+    <param name="dbtts-v1-tts-url" value="http://tts.emic:18100/tts"/>
+    <param name="dbtts-v1-client-secret" value=""/>
+    <param name="dbtts-v1-client-id" value=""/>
+    <!--现网部署
+    <param name="dbtts-v1-oauth-url" value="https://openapi.data-baker.com/oauth/2.0/token"/>
+    <param name="dbtts-v1-tts-url" value="https://openapi.data-baker.com/tts"/>
+    <param name="dbtts-v1-client-secret" value="ZmM2ODU1NjktOTgwNC00MGRmLTgzZjAtZGQwYTAyOGMzYmRi"/>
+    <param name="dbtts-v1-client-id" value="96fc228f-5889-4820-8ba4-d2eedd1900f3"/>
+    -->
+
+    <!--阿里-->
+    <param name="alitts_v1_url" value="http://tts.emic:8101/stream/v1/tts"/>
+    <param name="alitts_accessKeyId" value=" "/>
+    <param name="alitts_accessKeySecret" value=" "/>
+    <param name="alitts_appKey" value="default"/>
+
+    <!--现网部署
+    <param name="alitts_v1_url" value="http://nls-gateway.cn-shanghai.aliyuncs.com/stream/v1/tts"/>
+    <param name="alitts_accessKeyId" value="LTAI1uGQxImzHj5b"/>
+    <param name="alitts_accessKeySecret" value="PenF9dDYppdGHt0Vsj5wGJu6xhv3HY"/>
+    <param name="alitts_appKey" value="kbB9oQwrurTtb7LN"/>
+    -->
+
+    <!-- default socket service address -->
+    <param name="default-service-addr" value="127.0.0.1"/>
+    <!-- default socket port for esl service, which will be set in dialplan  -->
+    <param name="default-socket-port" value="8848"/>
+    <!-- default destination express set in dialplan. the dialplan file name is emic.xml-->
+    <param name="default-dialplan-destination" value="^8848$"/>
+
+  </settings>
+
+</configuration>
